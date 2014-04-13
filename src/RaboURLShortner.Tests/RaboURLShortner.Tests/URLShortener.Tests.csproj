@@ -49,12 +49,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\RaboURLShortner\RaboURLShortner.UI.Web.csproj">
-      <Project>{FD7CFCA1-B57F-4CDA-9961-90133D4C208F}</Project>
-      <Name>RaboURLShortner.UI.Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
