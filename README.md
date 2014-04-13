@@ -1,4 +1,4 @@
 URLShortener
 ============
 
-A simple URL shortener website. Update 1.
+A simple URL shortener website.
