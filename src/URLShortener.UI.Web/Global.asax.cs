@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace URLShortener.UI.Web.UI.Web
+namespace URLShortener.UI.Web
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -49,12 +49,12 @@ namespace URLShortener.UI.Web.UI.Web
                             );
 
             routes.MapRoute("Copy", "Copy",
-                    new
-                    {
-                        controller = "Home",
-                        action = "Copy"
-                    }
-                );
+                            new
+                            {
+                                controller = "Home",
+                                action = "Copy"
+                            }
+                        );
 
             routes.MapRoute("ShortUrl", "{shorturl}",
                                 new

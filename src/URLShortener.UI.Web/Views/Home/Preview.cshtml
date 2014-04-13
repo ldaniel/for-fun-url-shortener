@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "RaboTrim(url)! - Preview";
+    Layout = "~/Views/Master/_LayoutPageDefault.cshtml";
+}
+
+<h2>Preview</h2>
+<br />
+<p>This RaboTrim URL redirects to:</p>
+<p><label>@Model.Original<br /></label></p>
+<p><a href="@Model.Original" target="_self">Ok, proceed to this site</a>.</p>
+<br />
+<input type="submit" value="Back to RaboTrim(url)!" onclick="window.history.back(-1);" class="btn btn-lg btn-primary" />
