@@ -5,7 +5,7 @@
 
 <h2>Create your short URL now!</h2>
 <br />
-@using Html.BeginForm("HandleForm", "Home", FormMethod.Post, new { id = "URLForm" }))
+@using (Html.BeginForm("HandleForm", "Home", FormMethod.Post, new { id = "URLForm" }))
 {
     <p>
         <strong>Please, enter a long URL:</strong><br />
