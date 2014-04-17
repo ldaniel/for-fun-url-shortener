@@ -12,4 +12,4 @@ Solution requirements
 ----------------
 + Visual Studio 2013
    + MVC 5
-   + Razor
+   + Razor 3
