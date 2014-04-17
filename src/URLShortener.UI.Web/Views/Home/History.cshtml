@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "RaboTrim(url)! - History";
+    Layout = "~/Views/Master/_LayoutPageDefault.cshtml";
+}
+<h2>History</h2>
+<br />
+<p>
+    See below your history.
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Alias</th>
+                    <th>Created</th>
+                    <th>CreatedBy</th>
+                    <th>Hits</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model) 
+            {
+            <tbody>
+                <tr>
+                    <td>@item.Original</td>
+                    <td>@item.Id</td>
+                    <td>@String.Format("{0:g}", item.Created)</td>
+                    <td>@item.CreatedBy</td>
+                    <td>@item.Hits</td>
+                </tr>
+            </tbody>
+            }
+        </table>
+    </div>
+</p>
+<br />
+<input type="submit" value="Back to RaboTrim(url)!" onclick="window.history.back(-1);" class="btn btn-lg btn-primary" />
+

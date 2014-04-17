@@ -1,4 +1,4 @@
-﻿namespace URLShortener.UI.Web.Models
+﻿namespace URLShortener.Models
 {
     public static class AlphabetTest
     {

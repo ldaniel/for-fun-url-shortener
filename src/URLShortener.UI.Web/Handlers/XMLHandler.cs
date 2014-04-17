@@ -1,7 +1,8 @@
 ﻿using System;
-using URLShortener.UI.Web.Models;
+using System.Collections.Generic;
+using URLShortener.Models;
 
-namespace URLShortener.UI.Web.Handlers
+namespace URLShortener.Handlers
 {
     public class XMLHandler
     {
@@ -22,22 +23,56 @@ namespace URLShortener.UI.Web.Handlers
             return urlDataSet.GetUrlByID(id);
         }
 
-        private bool IsAlreadyShortened(URL urldata)
+        public URL GetIdByOriginalURL(string original)
         {
-            return urlDataSet.OriginalUrlExists(urldata.Original);
+            return urlDataSet.GetIdByOriginalURL(original);
         }
 
-        public string InsertNewURL(URL urldata)
+        public IEnumerable<URL> GetURLsByUser(string user)
         {
-            if (IsAlreadyShortened(urldata) == false)
-            {
-                if (urldata.Id == String.Empty)
-                    urldata.Id = AlphabetTest.Encode(urlDataSet.GetNextId());
+            return urlDataSet.GetURLsByUser(user);
+        }
 
-                urlDataSet.PersistUrl(urldata);
+        private bool IsAlreadyShortened(URL urldata)
+        {
+            return urlDataSet.OriginalUrlExists(urldata);
+        }
+
+        private bool IsAliasExistsForThisOriginalURL(URL urldata)
+        {            
+            return urlDataSet.AliasExists(urldata);
+        }
+
+        public URL InsertNewURL(URL urldata)
+        {
+            if (IsAliasExistsForThisOriginalURL(urldata))
+            {
+                urldata.Status = Status.AliasExists;
+            }
+            else
+            {
+                if (IsAlreadyShortened(urldata))
+                {
+                    urldata.Status = Status.URLExists;
+                    urldata.Id = GetIdByOriginalURL(urldata.Original).Id;
+                }
+                else
+                {
+                    urldata.Status = Status.NewURL;
+
+                    if (urldata.Id == String.Empty)
+                        urldata.Id = AlphabetTest.Encode(urlDataSet.GetNextId());
+                        
+                    urlDataSet.PersistUrl(urldata);
+                }
             }
 
-            return urlDataSet.GetIdByOriginalURL(urldata);
+            return urldata;
+        }
+
+        public void AddHit(string alias)
+        {
+            urlDataSet.AddHit(alias);
         }
     }
 }

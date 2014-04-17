@@ -1,16 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<root nextIdValue="5012">
-  <url original="http://www.rabobank.com" id="rabobank" created="2014-04-02T09:32:45.1603931-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://saoportal.am.rabonet.com/Topics/SupportU/IT/PSA%20Shared%20documents/Database/Planilha%20de%20instâncias%20-%20Rabobank.mht" id="ITITrabalha" created="2014-04-08T14:36:06.8419775-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://www.cade.com.br" id="apx" created="2014-04-09T13:51:18.4358091-03:00" createdby="RABONETAM\daniell" />
-  <url original="" id="apO" created="2014-04-09T14:49:23.0372351-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://www.sodexo.com" id="sodexo" created="2014-04-10T13:28:21.8233336-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://terra.com.br" id="terra" created="2014-04-10T17:06:26.4807699-03:00" createdby="RABONETAM\daniell" />
-  <url original="1" id="apP" created="2014-04-11T09:27:18.6767827-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://saoportal.am.rabonet.com/sites/psaboard/_layouts/FormServer.aspx?XmlLocation=/sites/psaboard/Memorandum/E-Guardian%20%E2%80%93%20Troca%20IIS%206%20para%20IIS%207.xml&amp;Source=http%3A%2F%2Fsaoportal%2Eam%2Erabonet%2Ecom%2Fsites%2Fpsaboard%2FMemorandum%2FForms%2FAllItems%2Easpx&amp;DefaultItemOpen=1&amp;ClientInstalled=true&amp;Source=http%3A%2F%2Fsaoportal%2Eam%2Erabonet%2Ecom%2Fsites%2Fpsaboard%2FMemorandum%2FForms%2FAllItems%2Easpx&amp;DefaultItemOpen=1" id="apQ" created="2014-04-11T09:35:04.1357827-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://a.c" id="apR" created="2014-04-11T09:38:47.0077827-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://a.co" id="apS" created="2014-04-11T09:39:16.3587827-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://a1.co" id="apT" created="2014-04-11T09:39:22.0777827-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://w.f" id="apU" created="2014-04-11T09:47:32.4517827-03:00" createdby="RABONETAM\daniell" />
-  <url original="http://www.terra.com.br" id="terra" created="2014-04-13T19:48:44.9691163-03:00" createdby="" />
+<root nextIdValue="5030">
+  <url original="http://www.rabobank.com" id="rabobank" created="2014-04-02T09:32:45.1603931-03:00" createdby="RABONETAM\daniell" hits="14" />
+  <url original="http://www.cade.com.br" id="aKb" created="2014-04-16T09:19:45.5746162-03:00" createdby="RABONETAM\daniell" hits="15" />
+  <url original="http://w.w" id="rabobank1" created="2014-04-16T09:44:55.593315-03:00" createdby="RABONETAM\daniell" hits="0" />
+  <url original="http://w.com" id="depende" created="2014-04-16T09:46:46.015315-03:00" createdby="RABONETAM\daniell" hits="0" />
+  <url original="http://www.site.com." id="aK3" created="2014-04-16T13:45:56.9921052-03:00" createdby="RABONETAM\daniell" hits="0" />
+  <url original="http://www.site.c..om" id="aKd" created="2014-04-16T13:46:42.5241052-03:00" createdby="RABONETAM\daniell" hits="10" />
+  <url original="http://leandrodaniel.com" id="leandrodaniel" created="2014-04-16T17:38:25.3315534-03:00" createdby="RABONETAM\daniell" hits="1" />
+  <url original="http://www.youtube.com" id="youtube" created="2014-04-16T21:39:22.4996871-03:00" createdby="" hits="1" />
 </root>

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using URLShortener.UI.Web;
-using URLShortener.UI.Web.Controllers;
+using URLShortener;
+using URLShortener.Controllers;
 
-namespace URLShortener.UI.Web.UI.Web.Tests.Controllers
+namespace URLShortener.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

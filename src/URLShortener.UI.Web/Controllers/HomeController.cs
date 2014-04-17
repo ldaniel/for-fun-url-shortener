@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Web.Mvc;
-using URLShortener.UI.Web.Models;
-using URLShortener.UI.Web.Handlers;
+using URLShortener.Models;
+using URLShortener.Handlers;
 
-namespace URLShortener.UI.Web.Controllers
+namespace URLShortener.Controllers
 {
     public class HomeController : Controller
     {
         private static XMLHandler xmlHandler = new XMLHandler();
 
-        public ActionResult Default()
+        public ActionResult Default(URL url)
         {
-            return View();
+            return View(url);
         }
 
         public ActionResult Index(String shorturl)
         {
             var url = xmlHandler.GetURLByID(shorturl);
+            xmlHandler.AddHit(shorturl);
             Response.StatusCode = 302;
             Response.RedirectLocation = url.Original;
 
@@ -41,19 +42,25 @@ namespace URLShortener.UI.Web.Controllers
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult HandleForm(string original, string alias)
         {
-            // TODO: Validar input de URL vazia
             var url = new Models.URL()
             {
                 Original = original,
                 Id = alias,
                 Created = DateTime.Now,
-                CreatedBy = Request.ServerVariables["LOGON_USER"]
+                CreatedBy = Request.ServerVariables["LOGON_USER"],
+                Hits = 0
             };
 
-            var updatedId = xmlHandler.InsertNewURL(url);
-            url.Id = updatedId;
+            var updatedURL = xmlHandler.InsertNewURL(url);
 
-            return RedirectToAction("create", url);
+            switch (updatedURL.Status)
+            {
+                case Status.AliasExists: return RedirectToAction("default", updatedURL);
+                case Status.URLExists:   return RedirectToAction("copy", updatedURL);
+                case Status.NewURL:      return RedirectToAction("create", updatedURL);
+            }
+
+            return RedirectToAction("default");
         }
 
         public ActionResult Create(URL url)
@@ -64,6 +71,14 @@ namespace URLShortener.UI.Web.Controllers
         public ActionResult Copy(URL url)
         {
             return View(url);
+        }
+
+        public ActionResult History()
+        {
+            var currentUser = Request.ServerVariables["LOGON_USER"];
+            var urlHistory = xmlHandler.GetURLsByUser(currentUser);
+
+            return View(urlHistory);
         }
     }
 }

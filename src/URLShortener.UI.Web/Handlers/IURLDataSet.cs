@@ -1,13 +1,17 @@
-﻿using URLShortener.UI.Web.Models;
+﻿using System.Collections.Generic;
+using URLShortener.Models;
 
-namespace URLShortener.UI.Web.Handlers
+namespace URLShortener.Handlers
 {
     public interface IURLDataSet
     {
         int GetNextId();
         URL GetUrlByID(string id);
-        string GetIdByOriginalURL(URL urldata);
-        bool OriginalUrlExists(string originalUrl);
+        URL GetIdByOriginalURL(string original);
+        bool OriginalUrlExists(URL urldata);
+        bool AliasExists(URL urldata);
         void PersistUrl(URL urldata);
+        IEnumerable<URL> GetURLsByUser(string user);
+        void AddHit(string alias);
     }
 }

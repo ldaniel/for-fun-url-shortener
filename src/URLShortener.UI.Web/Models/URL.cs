@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace URLShortener.UI.Web.Models
+namespace URLShortener.Models
 {
     public class URL
     {
@@ -8,6 +8,8 @@ namespace URLShortener.UI.Web.Models
         public String Id { get; set; }
         public DateTime Created { get; set; }
         public String CreatedBy { get; set; }
+        public Int32 Hits { get; set; }
+        public Status Status { get; set; }
 
         public URL() { }
 
@@ -16,5 +18,13 @@ namespace URLShortener.UI.Web.Models
             // TODO: Checar o que é melhor, relative or absolute.
             return Uri.IsWellFormedUriString(Original, UriKind.RelativeOrAbsolute);
         }
-    }    
+    }
+
+    public enum Status
+    {
+        Null,
+        AliasExists,
+        URLExists,
+        NewURL
+    }
 }
