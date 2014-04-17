@@ -10,6 +10,6 @@ URL shortening is a technique to convert a long URL (site or page address) to a 
 
 Solution requirements
 ----------------
-+ Visual Studio 2013
-   + MVC 5
-   + Razor 3
++ Visual Studio 2013:
+   + Microsoft ASP.NET MVC 5.x
+   + Microsoft ASP.NET Razor 3.x
