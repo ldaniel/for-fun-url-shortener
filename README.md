@@ -11,5 +11,9 @@ URL shortening is a technique to convert a long URL (site or page address) to a 
 Solution requirements
 ----------------
 + Visual Studio 2013:
-   + Microsoft ASP.NET MVC 5.x
+   + Microsoft ASP.NET MVC 5
    + Microsoft ASP.NET Razor 3.x
+   + jQuery 1.11
+   + jQuery Validation Plugin 1.12.0
+   + Boostrap 3.1.1
+   
